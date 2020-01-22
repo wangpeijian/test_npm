@@ -11,7 +11,8 @@
         <!--<img alt="Vue logo" src="./assets/logo.png">
         <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>-->
 
-        <JigsawPuzzle @result="onResult"></JigsawPuzzle>
+       <!-- <JigsawPuzzle @result="onResult"></JigsawPuzzle>-->
+        <codeGenerate></codeGenerate>
     </div>
 </template>
 
@@ -19,11 +20,13 @@
     import {Component, Vue} from 'vue-property-decorator';
     import HelloWorld from './components/HelloWorld.vue';
     import JigsawPuzzle from './components/JigsawPuzzle.vue';
+    import codeGenerate from './components/codeGenerate.vue';
 
     @Component({
         components: {
             HelloWorld,
             JigsawPuzzle,
+            codeGenerate,
         },
     })
     export default class App extends Vue {
