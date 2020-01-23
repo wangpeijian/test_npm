@@ -265,7 +265,6 @@
             const idGenerator = new IdGenerator();
 
             const packagePrice = this.packagePrice;
-            console.log("============packagePrice", packagePrice);
             const baseSQL = packagePrice ? RuleSQLPackage : RuleSQLUsage;
 
             const priceProductType = this.priceProductType;
@@ -282,7 +281,6 @@
                 let ruleExpresion = this.ruleExpresion;
 
                 for (let key in prices){
-                    console.log("====================", prices, key, prices[key]);
                     // @ts-ignore
                     ruleExpresion = ruleExpresion.Format(key, prices[key]);
                 }
