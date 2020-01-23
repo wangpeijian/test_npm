@@ -159,7 +159,7 @@
         }
 
         onMouseup(event: any) {
-            if (this.finished) {
+            if (this.finished || !this.mouseDown) {
                 return;
             }
 
