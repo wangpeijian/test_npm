@@ -1,0 +1,597 @@
+ECS_INSTANCE_BASE_TEST
+
+
+InstanceChargeType
+
+PrePaid
+
+
+
+RegionId
+
+cn-shanghai
+cn-qingdao
+cn-beijing
+cn-shenzhen
+
+
+
+InstanceType
+
+ecs.g6.large
+ecs.g6.xlarge
+ecs.g6.2xlarge
+ecs.g6.3xlarge
+ecs.g6.4xlarge
+ecs.g6.6xlarge
+ecs.g6.8xlarge
+ecs.g6.13xlarge
+ecs.g6.26xlarge
+
+240.00 
+480.00 
+960.00 
+1440.00 
+1920.00 
+2880.00 
+3840.00 
+6240.00 
+12480.00 
+
+
+
+
+[{
+	"start": "1",
+	"end": "11",
+	"value": "#{period}*(@{InstanceType}*0.85)"
+}, {
+	"start": "12",
+	"end": "12",
+	"value": "#{period}*(@{InstanceType}*0.85*0.85)"
+}, {
+	"start": "24",
+	"end": "24",
+	"value": "#{period}*(@{InstanceType}*0.7)"
+}, {
+	"start": "36",
+	"end": "36",
+	"value": "#{period}*(@{InstanceType}*0.55)"
+}]
+
+
+
+
+8400cc19-24ff-45ae-bbcc-077c0bb21084
+
+[{
+	"start": "1",
+	"end": "11",
+	"value": "#{period}*(@{Specification}*0.85)"
+}, {
+	"start": "12",
+	"end": "12",
+	"value": "#{period}*(@{Specification}/0.9*0.85*0.85)"
+}]
+
+
+Specification
+
+100
+300
+500
+1024
+5120
+10240
+51200
+
+
+22.64
+67.93
+113.22
+231.87
+1159.37
+2318.75
+11593.73
+
+
+
+
+
+
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004101752430000', 'ECITIC', '8400cc19-24ff-45ae-bbcc-077c0bb21084', '100', 'PER_HOUR', 'BRACKET', '[{"start": "1","end": "11","value": "#{period}*(22640*0.85)"↵}, {"start": "12","end": "12","value": "#{period}*(22640/0.9*0.85*0.85)"↵}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004101752430001', 'ECITIC', '8400cc19-24ff-45ae-bbcc-077c0bb21084', '300', 'PER_HOUR', 'BRACKET', '[{"start": "1","end": "11","value": "#{period}*(67930*0.85)"↵}, {"start": "12","end": "12","value": "#{period}*(67930/0.9*0.85*0.85)"↵}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004101752430002', 'ECITIC', '8400cc19-24ff-45ae-bbcc-077c0bb21084', '500', 'PER_HOUR', 'BRACKET', '[{"start": "1","end": "11","value": "#{period}*(113220*0.85)"↵}, {"start": "12","end": "12","value": "#{period}*(113220/0.9*0.85*0.85)"↵}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004101752430003', 'ECITIC', '8400cc19-24ff-45ae-bbcc-077c0bb21084', '1024', 'PER_HOUR', 'BRACKET', '[{"start": "1","end": "11","value": "#{period}*(231870*0.85)"↵}, {"start": "12","end": "12","value": "#{period}*(231870/0.9*0.85*0.85)"↵}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004101752430004', 'ECITIC', '8400cc19-24ff-45ae-bbcc-077c0bb21084', '5120', 'PER_HOUR', 'BRACKET', '[{"start": "1","end": "11","value": "#{period}*(1159370*0.85)"↵}, {"start": "12","end": "12","value": "#{period}*(1159370/0.9*0.85*0.85)"↵}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004101752430005', 'ECITIC', '8400cc19-24ff-45ae-bbcc-077c0bb21084', '10240', 'PER_HOUR', 'BRACKET', '[{"start": "1","end": "11","value": "#{period}*(2318750*0.85)"↵}, {"start": "12","end": "12","value": "#{period}*(2318750/0.9*0.85*0.85)"↵}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004101752430006', 'ECITIC', '8400cc19-24ff-45ae-bbcc-077c0bb21084', '51200', 'PER_HOUR', 'BRACKET', '[{"start": "1","end": "11","value": "#{period}*(11593730*0.85)"↵}, {"start": "12","end": "12","value": "#{period}*(11593730/0.9*0.85*0.85)"↵}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+
+
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', '8400cc19-24ff-45ae-bbcc-077c0bb21084', '100', 'Specification', '100')
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', '8400cc19-24ff-45ae-bbcc-077c0bb21084', '300', 'Specification', '300')
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', '8400cc19-24ff-45ae-bbcc-077c0bb21084', '500', 'Specification', '500')
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', '8400cc19-24ff-45ae-bbcc-077c0bb21084', '1024', 'Specification', '1024')
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', '8400cc19-24ff-45ae-bbcc-077c0bb21084', '5120', 'Specification', '5120')
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', '8400cc19-24ff-45ae-bbcc-077c0bb21084', '10240', 'Specification', '10240')
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', '8400cc19-24ff-45ae-bbcc-077c0bb21084', '51200', 'Specification', '51200')
+
+
+
+DRDS_INSTANCE_PACKAGE
+
+[{
+    "start": "1",
+    "end": "11",
+    "value": "#{period}*@{InstanceSpec}*0.85"
+},{
+    "start": "12",
+    "end": "12",
+    "value": "#{period}*@{InstanceSpec}*0.85*0.85"
+},{
+    "start": "24",
+    "end": "24",
+    "value": "#{period}*@{InstanceSpec}*0.7"
+}, {
+    "start": "36",
+    "end": "36",
+    "value": "#{period}*@{InstanceSpec}*0.5"
+}]
+
+
+InstanceSpec
+
+drds.sn2.4c16g.8C32G
+drds.sn2.8c32g.16C64G
+drds.sn2.8c32g.32C128G
+drds.sn2.8c32g.48C192G
+drds.sn2.8c32g.64C256G
+drds.sn2.8c32g.96C384G
+drds.sn2.8c32g.128C512G
+drds.sn2.16c64g.32C128G
+drds.sn2.16c64g.64C256G
+drds.sn2.16c64g.96C384G
+drds.sn2.16c64g.128C512G
+drds.sn2.16c64g.192C768G
+drds.sn2.16c64g.256C1024G
+drds.sn2.16c64g.384C1536G
+drds.sn2.16c64g.512C2048G
+drds.sn2.16c64g.768C3072G
+drds.sn2.16c64g.1024C4096G
+
+1772
+4655
+9242
+13829
+18416
+27591
+36765
+12503
+24912
+37321
+49729
+74547
+99365
+149001
+198636
+297907
+397178
+
+-- 包费
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.4c16g.8C32G', 'InstanceSpec', 'drds.sn2.4c16g.8C32G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.8c32g.16C64G', 'InstanceSpec', 'drds.sn2.8c32g.16C64G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.8c32g.32C128G', 'InstanceSpec', 'drds.sn2.8c32g.32C128G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.8c32g.48C192G', 'InstanceSpec', 'drds.sn2.8c32g.48C192G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.8c32g.64C256G', 'InstanceSpec', 'drds.sn2.8c32g.64C256G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.8c32g.96C384G', 'InstanceSpec', 'drds.sn2.8c32g.96C384G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.8c32g.128C512G', 'InstanceSpec', 'drds.sn2.8c32g.128C512G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.32C128G', 'InstanceSpec', 'drds.sn2.16c64g.32C128G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.64C256G', 'InstanceSpec', 'drds.sn2.16c64g.64C256G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.96C384G', 'InstanceSpec', 'drds.sn2.16c64g.96C384G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.128C512G', 'InstanceSpec', 'drds.sn2.16c64g.128C512G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.192C768G', 'InstanceSpec', 'drds.sn2.16c64g.192C768G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.256C1024G', 'InstanceSpec', 'drds.sn2.16c64g.256C1024G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.384C1536G', 'InstanceSpec', 'drds.sn2.16c64g.384C1536G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.512C2048G', 'InstanceSpec', 'drds.sn2.16c64g.512C2048G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.768C3072G', 'InstanceSpec', 'drds.sn2.16c64g.768C3072G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.1024C4096G', 'InstanceSpec', 'drds.sn2.16c64g.1024C4096G');
+
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151717320000', 'ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.4c16g.8C32G', 'PER_HOUR', 'BRACKET', '[{
+    "start": "1",
+    "end": "11",
+    "value": "#{period}*1772000*0.85"
+},{
+    "start": "12",
+    "end": "12",
+    "value": "#{period}*1772000*0.85*0.85"
+},{
+    "start": "24",
+    "end": "24",
+    "value": "#{period}*1772000*0.7"
+}, {
+    "start": "36",
+    "end": "36",
+    "value": "#{period}*1772000*0.5"
+}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151717320001', 'ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.8c32g.16C64G', 'PER_HOUR', 'BRACKET', '[{
+    "start": "1",
+    "end": "11",
+    "value": "#{period}*4655000*0.85"
+},{
+    "start": "12",
+    "end": "12",
+    "value": "#{period}*4655000*0.85*0.85"
+},{
+    "start": "24",
+    "end": "24",
+    "value": "#{period}*4655000*0.7"
+}, {
+    "start": "36",
+    "end": "36",
+    "value": "#{period}*4655000*0.5"
+}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151717320002', 'ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.8c32g.32C128G', 'PER_HOUR', 'BRACKET', '[{
+    "start": "1",
+    "end": "11",
+    "value": "#{period}*9242000*0.85"
+},{
+    "start": "12",
+    "end": "12",
+    "value": "#{period}*9242000*0.85*0.85"
+},{
+    "start": "24",
+    "end": "24",
+    "value": "#{period}*9242000*0.7"
+}, {
+    "start": "36",
+    "end": "36",
+    "value": "#{period}*9242000*0.5"
+}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151717320003', 'ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.8c32g.48C192G', 'PER_HOUR', 'BRACKET', '[{
+    "start": "1",
+    "end": "11",
+    "value": "#{period}*13829000*0.85"
+},{
+    "start": "12",
+    "end": "12",
+    "value": "#{period}*13829000*0.85*0.85"
+},{
+    "start": "24",
+    "end": "24",
+    "value": "#{period}*13829000*0.7"
+}, {
+    "start": "36",
+    "end": "36",
+    "value": "#{period}*13829000*0.5"
+}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151717320004', 'ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.8c32g.64C256G', 'PER_HOUR', 'BRACKET', '[{
+    "start": "1",
+    "end": "11",
+    "value": "#{period}*18416000*0.85"
+},{
+    "start": "12",
+    "end": "12",
+    "value": "#{period}*18416000*0.85*0.85"
+},{
+    "start": "24",
+    "end": "24",
+    "value": "#{period}*18416000*0.7"
+}, {
+    "start": "36",
+    "end": "36",
+    "value": "#{period}*18416000*0.5"
+}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151717320005', 'ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.8c32g.96C384G', 'PER_HOUR', 'BRACKET', '[{
+    "start": "1",
+    "end": "11",
+    "value": "#{period}*27591000*0.85"
+},{
+    "start": "12",
+    "end": "12",
+    "value": "#{period}*27591000*0.85*0.85"
+},{
+    "start": "24",
+    "end": "24",
+    "value": "#{period}*27591000*0.7"
+}, {
+    "start": "36",
+    "end": "36",
+    "value": "#{period}*27591000*0.5"
+}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151717320006', 'ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.8c32g.128C512G', 'PER_HOUR', 'BRACKET', '[{
+    "start": "1",
+    "end": "11",
+    "value": "#{period}*36765000*0.85"
+},{
+    "start": "12",
+    "end": "12",
+    "value": "#{period}*36765000*0.85*0.85"
+},{
+    "start": "24",
+    "end": "24",
+    "value": "#{period}*36765000*0.7"
+}, {
+    "start": "36",
+    "end": "36",
+    "value": "#{period}*36765000*0.5"
+}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151717320007', 'ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.32C128G', 'PER_HOUR', 'BRACKET', '[{
+    "start": "1",
+    "end": "11",
+    "value": "#{period}*12503000*0.85"
+},{
+    "start": "12",
+    "end": "12",
+    "value": "#{period}*12503000*0.85*0.85"
+},{
+    "start": "24",
+    "end": "24",
+    "value": "#{period}*12503000*0.7"
+}, {
+    "start": "36",
+    "end": "36",
+    "value": "#{period}*12503000*0.5"
+}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151717320008', 'ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.64C256G', 'PER_HOUR', 'BRACKET', '[{
+    "start": "1",
+    "end": "11",
+    "value": "#{period}*24912000*0.85"
+},{
+    "start": "12",
+    "end": "12",
+    "value": "#{period}*24912000*0.85*0.85"
+},{
+    "start": "24",
+    "end": "24",
+    "value": "#{period}*24912000*0.7"
+}, {
+    "start": "36",
+    "end": "36",
+    "value": "#{period}*24912000*0.5"
+}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151717320009', 'ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.96C384G', 'PER_HOUR', 'BRACKET', '[{
+    "start": "1",
+    "end": "11",
+    "value": "#{period}*37321000*0.85"
+},{
+    "start": "12",
+    "end": "12",
+    "value": "#{period}*37321000*0.85*0.85"
+},{
+    "start": "24",
+    "end": "24",
+    "value": "#{period}*37321000*0.7"
+}, {
+    "start": "36",
+    "end": "36",
+    "value": "#{period}*37321000*0.5"
+}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('2020041517173200010', 'ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.128C512G', 'PER_HOUR', 'BRACKET', '[{
+    "start": "1",
+    "end": "11",
+    "value": "#{period}*49729000*0.85"
+},{
+    "start": "12",
+    "end": "12",
+    "value": "#{period}*49729000*0.85*0.85"
+},{
+    "start": "24",
+    "end": "24",
+    "value": "#{period}*49729000*0.7"
+}, {
+    "start": "36",
+    "end": "36",
+    "value": "#{period}*49729000*0.5"
+}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('2020041517173200011', 'ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.192C768G', 'PER_HOUR', 'BRACKET', '[{
+    "start": "1",
+    "end": "11",
+    "value": "#{period}*74547000*0.85"
+},{
+    "start": "12",
+    "end": "12",
+    "value": "#{period}*74547000*0.85*0.85"
+},{
+    "start": "24",
+    "end": "24",
+    "value": "#{period}*74547000*0.7"
+}, {
+    "start": "36",
+    "end": "36",
+    "value": "#{period}*74547000*0.5"
+}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('2020041517173200012', 'ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.256C1024G', 'PER_HOUR', 'BRACKET', '[{
+    "start": "1",
+    "end": "11",
+    "value": "#{period}*99365000*0.85"
+},{
+    "start": "12",
+    "end": "12",
+    "value": "#{period}*99365000*0.85*0.85"
+},{
+    "start": "24",
+    "end": "24",
+    "value": "#{period}*99365000*0.7"
+}, {
+    "start": "36",
+    "end": "36",
+    "value": "#{period}*99365000*0.5"
+}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('2020041517173200013', 'ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.384C1536G', 'PER_HOUR', 'BRACKET', '[{
+    "start": "1",
+    "end": "11",
+    "value": "#{period}*149001000*0.85"
+},{
+    "start": "12",
+    "end": "12",
+    "value": "#{period}*149001000*0.85*0.85"
+},{
+    "start": "24",
+    "end": "24",
+    "value": "#{period}*149001000*0.7"
+}, {
+    "start": "36",
+    "end": "36",
+    "value": "#{period}*149001000*0.5"
+}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('2020041517173200014', 'ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.512C2048G', 'PER_HOUR', 'BRACKET', '[{
+    "start": "1",
+    "end": "11",
+    "value": "#{period}*198636000*0.85"
+},{
+    "start": "12",
+    "end": "12",
+    "value": "#{period}*198636000*0.85*0.85"
+},{
+    "start": "24",
+    "end": "24",
+    "value": "#{period}*198636000*0.7"
+}, {
+    "start": "36",
+    "end": "36",
+    "value": "#{period}*198636000*0.5"
+}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('2020041517173200015', 'ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.768C3072G', 'PER_HOUR', 'BRACKET', '[{
+    "start": "1",
+    "end": "11",
+    "value": "#{period}*297907000*0.85"
+},{
+    "start": "12",
+    "end": "12",
+    "value": "#{period}*297907000*0.85*0.85"
+},{
+    "start": "24",
+    "end": "24",
+    "value": "#{period}*297907000*0.7"
+}, {
+    "start": "36",
+    "end": "36",
+    "value": "#{period}*297907000*0.5"
+}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('2020041517173200016', 'ECITIC', 'DRDS_INSTANCE_PACKAGE', 'drds.sn2.16c64g.1024C4096G', 'PER_HOUR', 'BRACKET', '[{
+    "start": "1",
+    "end": "11",
+    "value": "#{period}*397178000*0.85"
+},{
+    "start": "12",
+    "end": "12",
+    "value": "#{period}*397178000*0.85*0.85"
+},{
+    "start": "24",
+    "end": "24",
+    "value": "#{period}*397178000*0.7"
+}, {
+    "start": "36",
+    "end": "36",
+    "value": "#{period}*397178000*0.5"
+}]', 'Period', '', '元', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');
+
+
+
+
+-- 按量
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.4c16g.8C32G', 'InstanceSpec', 'drds.sn2.4c16g.8C32G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.8c32g.16C64G', 'InstanceSpec', 'drds.sn2.8c32g.16C64G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.8c32g.32C128G', 'InstanceSpec', 'drds.sn2.8c32g.32C128G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.8c32g.48C192G', 'InstanceSpec', 'drds.sn2.8c32g.48C192G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.8c32g.64C256G', 'InstanceSpec', 'drds.sn2.8c32g.64C256G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.8c32g.96C384G', 'InstanceSpec', 'drds.sn2.8c32g.96C384G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.8c32g.128C512G', 'InstanceSpec', 'drds.sn2.8c32g.128C512G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.32C128G', 'InstanceSpec', 'drds.sn2.16c64g.32C128G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.64C256G', 'InstanceSpec', 'drds.sn2.16c64g.64C256G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.96C384G', 'InstanceSpec', 'drds.sn2.16c64g.96C384G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.128C512G', 'InstanceSpec', 'drds.sn2.16c64g.128C512G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.192C768G', 'InstanceSpec', 'drds.sn2.16c64g.192C768G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.256C1024G', 'InstanceSpec', 'drds.sn2.16c64g.256C1024G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.384C1536G', 'InstanceSpec', 'drds.sn2.16c64g.384C1536G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.512C2048G', 'InstanceSpec', 'drds.sn2.16c64g.512C2048G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.768C3072G', 'InstanceSpec', 'drds.sn2.16c64g.768C3072G');
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_factor` (`TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `FACTOR_NAME`, `FACTOR_VALUE`) VALUES ('ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.1024C4096G', 'InstanceSpec', 'drds.sn2.16c64g.1024C4096G');
+
+
+ INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151456340000', 'ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.4c16g.8C32G', 'PER_HOUR', 'EXPR', '2461', '', 'h', '元/时', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151456340001', 'ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.8c32g.16C64G', 'PER_HOUR', 'EXPR', '6465', '', 'h', '元/时', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151456340002', 'ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.8c32g.32C128G', 'PER_HOUR', 'EXPR', '12836', '', 'h', '元/时', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151456340003', 'ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.8c32g.48C192G', 'PER_HOUR', 'EXPR', '19207', '', 'h', '元/时', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151456340004', 'ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.8c32g.64C256G', 'PER_HOUR', 'EXPR', '25578', '', 'h', '元/时', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151456340005', 'ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.8c32g.96C384G', 'PER_HOUR', 'EXPR', '38321', '', 'h', '元/时', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151456340006', 'ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.8c32g.128C512G', 'PER_HOUR', 'EXPR', '51063', '', 'h', '元/时', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151456340007', 'ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.32C128G', 'PER_HOUR', 'EXPR', '17365', '', 'h', '元/时', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151456340008', 'ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.64C256G', 'PER_HOUR', 'EXPR', '34600', '', 'h', '元/时', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('202004151456340009', 'ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.96C384G', 'PER_HOUR', 'EXPR', '51835', '', 'h', '元/时', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('2020041514563400010', 'ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.128C512G', 'PER_HOUR', 'EXPR', '69068', '', 'h', '元/时', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('2020041514563400011', 'ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.192C768G', 'PER_HOUR', 'EXPR', '103538', '', 'h', '元/时', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('2020041514563400012', 'ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.256C1024G', 'PER_HOUR', 'EXPR', '138007', '', 'h', '元/时', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('2020041514563400013', 'ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.384C1536G', 'PER_HOUR', 'EXPR', '206946', '', 'h', '元/时', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('2020041514563400014', 'ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.512C2048G', 'PER_HOUR', 'EXPR', '275883', '', 'h', '元/时', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('2020041514563400015', 'ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.768C3072G', 'PER_HOUR', 'EXPR', '413760', '', 'h', '元/时', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');
+
+INSERT INTO `dev_baas_bmc1`.`cp_pricemaking_rule` (`ID`, `TENANT_ID`, `PRICE_PRODUCT_TYPE`, `PRICE_PRODUCT_ID`, `PRICE_TYPE`, `RULE_CODE`, `RULE_EXPRESION`, `EXT_INFO`, `PRICE_UNIT`, `PRICE_UNIT_NAME`, `ACTIVE_TIME`, `INACTIVE_TIME`, `BILLING_TYPE`) VALUES ('2020041514563400016', 'ECITIC', 'DRDS_INSTANCE_USAGE', 'drds.sn2.16c64g.1024C4096G', 'PER_HOUR', 'EXPR', '551636', '', 'h', '元/时', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');
+
