@@ -22,5 +22,9 @@
     })
     export default class extends Vue {
         @Prop() private msg!: string;
+
+        created(){
+            console.log("123")
+        }
     }
 </script>

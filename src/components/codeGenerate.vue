@@ -77,6 +77,13 @@
         <div class="form-line">
             <button @click="generate">生成sql</button>
         </div>
+
+        <p>factor_sql</p>
+        <textarea id="factor_sql" cols="30" rows="50"></textarea>
+        <br>
+        <br>
+        <p>rule_sql</p>
+        <textarea id="rule_sql" cols="30" rows="50"></textarea>
     </div>
 </template>
 
@@ -114,10 +121,10 @@
 
     import {Component, Vue, Watch} from 'vue-property-decorator';
 
-    const FactorSQL: string = `INSERT INTO \`dev_baas_bmc1\`.\`cp_pricemaking_factor\` (\`TENANT_ID\`, \`PRICE_PRODUCT_TYPE\`, \`PRICE_PRODUCT_ID\`, \`FACTOR_NAME\`, \`FACTOR_VALUE\`) VALUES ('ECITIC', '@{priceProductType}', '@{priceProductId}', '@{factorName}', '@{factorValue}')`;
+    const FactorSQL: string = `INSERT INTO \`dev_baas_bmc1\`.\`cp_pricemaking_factor\` (\`TENANT_ID\`, \`PRICE_PRODUCT_TYPE\`, \`PRICE_PRODUCT_ID\`, \`FACTOR_NAME\`, \`FACTOR_VALUE\`) VALUES ('ECITIC', '@{priceProductType}', '@{priceProductId}', '@{factorName}', '@{factorValue}');\n\r`;
 
-    const RuleSQLPackage: string = `INSERT INTO \`dev_baas_bmc1\`.\`cp_pricemaking_rule\` (\`ID\`, \`TENANT_ID\`, \`PRICE_PRODUCT_TYPE\`, \`PRICE_PRODUCT_ID\`, \`PRICE_TYPE\`, \`RULE_CODE\`, \`RULE_EXPRESION\`, \`EXT_INFO\`, \`PRICE_UNIT\`, \`PRICE_UNIT_NAME\`, \`ACTIVE_TIME\`, \`INACTIVE_TIME\`, \`BILLING_TYPE\`) VALUES ('@{id}', 'ECITIC', '@{priceProductType}', '@{priceProductId}', 'PER_HOUR', '@{ruleCode}', '@{ruleExpresion}', '@{exitInfo}', '@{priceUnit}', '@{priceUnitName}', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');`;
-    const RuleSQLUsage: string = `INSERT INTO \`dev_baas_bmc1\`.\`cp_pricemaking_rule\` (\`ID\`, \`TENANT_ID\`, \`PRICE_PRODUCT_TYPE\`, \`PRICE_PRODUCT_ID\`, \`PRICE_TYPE\`, \`RULE_CODE\`, \`RULE_EXPRESION\`, \`EXT_INFO\`, \`PRICE_UNIT\`, \`PRICE_UNIT_NAME\`, \`ACTIVE_TIME\`, \`INACTIVE_TIME\`, \`BILLING_TYPE\`) VALUES ('@{id}', 'ECITIC', '@{priceProductType}', '@{priceProductId}', 'PER_HOUR', '@{ruleCode}', '@{ruleExpresion}', '@{exitInfo}', '@{priceUnit}', '@{priceUnitName}', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');`;
+    const RuleSQLPackage: string = `INSERT INTO \`dev_baas_bmc1\`.\`cp_pricemaking_rule\` (\`ID\`, \`TENANT_ID\`, \`PRICE_PRODUCT_TYPE\`, \`PRICE_PRODUCT_ID\`, \`PRICE_TYPE\`, \`RULE_CODE\`, \`RULE_EXPRESION\`, \`EXT_INFO\`, \`PRICE_UNIT\`, \`PRICE_UNIT_NAME\`, \`ACTIVE_TIME\`, \`INACTIVE_TIME\`, \`BILLING_TYPE\`) VALUES ('@{id}', 'ECITIC', '@{priceProductType}', '@{priceProductId}', 'PER_HOUR', '@{ruleCode}', '@{ruleExpresion}', '@{exitInfo}', '@{priceUnit}', '@{priceUnitName}', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'package');\n\r`;
+    const RuleSQLUsage: string = `INSERT INTO \`dev_baas_bmc1\`.\`cp_pricemaking_rule\` (\`ID\`, \`TENANT_ID\`, \`PRICE_PRODUCT_TYPE\`, \`PRICE_PRODUCT_ID\`, \`PRICE_TYPE\`, \`RULE_CODE\`, \`RULE_EXPRESION\`, \`EXT_INFO\`, \`PRICE_UNIT\`, \`PRICE_UNIT_NAME\`, \`ACTIVE_TIME\`, \`INACTIVE_TIME\`, \`BILLING_TYPE\`) VALUES ('@{id}', 'ECITIC', '@{priceProductType}', '@{priceProductId}', 'PER_HOUR', '@{ruleCode}', '@{ruleExpresion}', '@{exitInfo}', '@{priceUnit}', '@{priceUnitName}', '2016-01-01 12:00:00', '2099-01-01 12:00:00', 'usage');\n\r`;
 
 
     /**
@@ -173,6 +180,20 @@
             const cartesianRes: any[] = this.generateCartesian();
             const factorSQL = this.generateFactorSQL(cartesianRes);
             const ruleSQL = this.generateRuleSQL(cartesianRes);
+
+            console.log("=============factorSQLCollection 是 factor sql结果：");
+            const factorSQLStr = factorSQL.join(" ");
+            console.log(factorSQLStr);
+
+            console.log("=============ruleSQLCollection 是 rule sql结果：");
+            const ruleSQLStr = ruleSQL.join("");
+            console.log(ruleSQLStr);
+
+           document.getElementById("factor_sql").value = factorSQLStr;
+           document.getElementById("rule_sql").value = ruleSQLStr;
+
+            // console.log(JSON.stringify(factorSQL));
+            // console.log(JSON.stringify(ruleSQL));
         }
 
         /**
@@ -252,8 +273,6 @@
                 }
             });
 
-            console.log("=============factorSQLCollection 是 factor sql结果：", factorSQLCollection);
-
             return factorSQLCollection;
         }
 
@@ -299,8 +318,6 @@
                 ruleSQLCollection.push(sql);
 
             });
-
-            console.log("=============ruleSQLCollection 是 rule sql结果：", ruleSQLCollection);
 
             return ruleSQLCollection;
         }

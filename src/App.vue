@@ -11,8 +11,9 @@
         <!--<img alt="Vue logo" src="./assets/logo.png">
         <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>-->
 
-        <JigsawPuzzle @result="onResult"></JigsawPuzzle>
-<!--        <codeGenerate></codeGenerate>-->
+<!--        <JigsawPuzzle @result="onResult"></JigsawPuzzle>-->
+        <codeGenerate></codeGenerate>
+<!--        <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>-->
     </div>
 </template>
 
