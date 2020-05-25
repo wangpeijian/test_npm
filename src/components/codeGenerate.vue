@@ -189,8 +189,8 @@
             const ruleSQLStr = ruleSQL.join("");
             console.log(ruleSQLStr);
 
-           document.getElementById("factor_sql").value = factorSQLStr;
-           document.getElementById("rule_sql").value = ruleSQLStr;
+            (document.getElementById("factor_sql") as any).value = factorSQLStr;
+            (document.getElementById("rule_sql") as any).value = ruleSQLStr;
 
             // console.log(JSON.stringify(factorSQL));
             // console.log(JSON.stringify(ruleSQL));
